@@ -11,8 +11,9 @@ Depends:
 Imports:
     RCurl,
     RJSONIO,
-    XML,
+    XML
 Suggests:
     testthat,
     roxygen2,
     maps
+RoxygenNote: 5.0.1

@@ -36,6 +36,9 @@ fetch_in_chunks <- function(ids, chunk_size = 500, delay = 0, ...){
 #' plasticity_ids <- entrez_search("pubmed", "phenotypic plasticity", retmax = 2600)$ids[1:100]
 #' plasticity_records <- pubmed_fetch(plasticity_ids)
 #' }
+#' @import XML
+#' @import RCurl
+#' @import RJSONIO
 
 pubmed_fetch <- function(ids, file_format = "xml", as_r_object = TRUE, ...){
     

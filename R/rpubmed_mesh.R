@@ -5,7 +5,8 @@
 #' @examples \dontrun{
 #' 
 #' articles <- fromJSON("Test/PCD_articles.json")
-#' diab = get_articles_by_terms(articles, list("diabetes", c("case-control")), where= in_mesh_abstract_p)
+#' diab = get_articles_by_terms(articles, 
+#' list("diabetes", c("case-control")), where= in_mesh_abstract_p)
 #' diab_assoc <- mesh_assoc_table(diab)
 #' # list of MeSH headings with frequencies:
 #' d <- diag(diab_assoc)
@@ -66,11 +67,14 @@ mesh_table <- function(articles){
 #' @param ... arguments to be passed to get_articles_by_terms. e.g.  where = in_mesh_abstract_p
 #' 
 #' @return  matrix
-#'  @examples \dontrun{
+#' @examples 
+#' \dontrun{
 #'      articles <- fromJSON("Test/PCD_articles.json")
 #'      keywords <- c("effectiveness", "treatment outcome", "comorbidity", "risk factor", "incidence")
 #'      k_names <- c("EFF", "TREATOUT", "COMORB", "RISK", "INCID")
-#'      kat <- keyword_assoc_table(corpus = articles, keyword_list = keywords, keyword_names = k_names, where = in_mesh_abstract_p)
+#'      kat <- keyword_assoc_table(corpus = articles, 
+#'      keyword_list = keywords, keyword_names = k_names, 
+#'      where = in_mesh_abstract_p)
 #'  }
 keyword_assoc_table <- function(corpus, keyword_list, keyword_names = NULL, ...){
     kt <- data.frame(rbind(t(combn(keyword_list, 2)),
