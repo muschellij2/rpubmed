@@ -25,7 +25,6 @@ fetch_in_chunks <- function(ids, chunk_size = 500, delay = 0, ...){
 #' Download data from Pubmed
 #' 
 #' 
-#' @importFrom rentrez entrez_email 
 #' @export 
 #' @param ids integer Pubmed ID's to get abstracts and metadata from
 #' @param file_format character Format in which to get data (eg, fasta, xml...) default = "xml"
@@ -41,7 +40,7 @@ fetch_in_chunks <- function(ids, chunk_size = 500, delay = 0, ...){
 pubmed_fetch <- function(ids, file_format = "xml", as_r_object = TRUE, ...){
     
     args <- c(id = paste(ids, collapse = ","), db = "pubmed", rettype = file_format, 
-              email = entrez_email, tool = entrez_tool, ...)
+              email = "daspringate@gmail.com", tool = "rpubmed", ...)
     
     url_args <- paste(paste(names(args), args, sep="="), collapse = "&")
     base_url <- "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?retmode=full"
